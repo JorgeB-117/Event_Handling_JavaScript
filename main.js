@@ -19,3 +19,23 @@ function updateTotalPrice() {
     totalPriceElement.textContent = `${totalPrice}`
 };
 
+// this is the alert for invalid order.
+function orderAlert() {
+    const quantity = parseInt(quantityInput.value);
+    if (quantity < 1) {
+        alert(' Enter a valid quantity please!!.');
+        return false;
+    }
+    return true;
+};
+
+//Task 4: Handle Order Submission
+
+placeOrderButton.addEventListener('click', function() {
+    const selectedProduct = productSelector.options[productSelector.selectedIndex].text;
+    const quantity = quantityInput.value;
+    const totalPrice = totalPriceElement.textContent; // Get the current total price
+
+    orderSummary.textContent = `Congratulations on your order! You ordered ${quantity} of ${selectedProduct} for a total of $${totalPrice}`
+alert (`Thank you for your purchase!`)
+});
